@@ -3,7 +3,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React, { useState } from 'react';
 import { SignOutButton, useUser } from '@clerk/nextjs';
-const menuItems =[
+
+const menuItems = [
     {
         title:"MENU",
         items: [
@@ -14,100 +15,112 @@ const menuItems =[
                 visible: ["admin", "teacher", "student", "parent"]
             },
             {
+                icon:"/icons/faculty.png",
+                label:"Faculty",
+                href:"/dashboard/list/faculties",
+                visible: ["admin", "teacher", "student", "parent"]
+            },
+            {
+                icon:"/icons/department.png",
+                label:"Department",
+                href:"/dashboard/list/departments",
+                visible:["admin","teacher"],   
+            },
+            {
                 icon:"/icons/Teacher.png",
                 label:"Teachers",
                 href:"/dashboard/list/teachers",
                 visible:["admin","teacher"],   
             },
             {
-                icon:"/icons/student.png",
-                label:"Students",
-                href:"/list/students",
-                visible:["admin","teacher"],
-            },
-            {
                 icon:"/icons/parent.png",
                 label:"Parents",
-                href:"/list/parents",
+                href:"/dashboard/list/parents",
                 visible:["admin", "teacher"],
             },
             {
-                icon:"/icons/subject.png",
-                label:"Subjects",
-                href:"/list/subjects",
-                visible: ["admin"],
-            }, 
+                icon:"/icons/student.png",
+                label:"Students",
+                href:"/dashboard/list/students",
+                visible:["admin","teacher"],
+            },
             {
                 icon:"/icons/class.png",
                 label:"Classes",
-                href:"/list/classes",
+                href:"/dashboard/list/classes",
                 visible:["admin","teacher"],
-            }, 
-            {
-                icon:"/icons/lesson.png",
-                label:"Lessons",
-                href:"/list/essons",
-                visible:["admin","teacher"],
-            },
-            {
-                icon:"/icons/exam.png",
-                label:"Exams",
-                href:"/list/exams",
-                visible:["admin","teacher","student","parent"],
-            }, 
-            {
-                icon:"/icons/assignment.png",
-                label:"Assignments",
-                href:"/list/assignments",
-                visible:["admin","teacher","student","parent"],
-            },
-            {
-                icon:"/icons/result.png",
-                label:"Results",
-                href:"/list/results",
-                visible:["admin","teacher","student","parent"],
             },
             {
                 icon:"/icons/attendance.png",
                 label:"Attendances",
-                href:"/list/attendancnes",
+                href:"/dashboard/list/attendances",
+                visible:["admin","teacher","student","parent"],
+            },
+            {
+                icon:"/icons/subject.png",
+                label:"Subjects",
+                href:"/dashboard/list/subjects",
+                visible: ["admin"],
+            }, 
+            {
+                icon:"/icons/lesson.png",
+                label:"Lessons",
+                href:"/dashboard/list/lessons",
+                visible:["admin","teacher"],
+            },
+            {
+                icon:"/icons/assignment.png",
+                label:"Assignments",
+                href:"/dashboard/list/assignments",
+                visible:["admin","teacher","student","parent"],
+            },
+            {
+                icon:"/icons/exam.png",
+                label:"Exams",
+                href:"/dashboard/list/exams",
+                visible:["admin","teacher","student","parent"],
+            }, 
+            {
+                icon:"/icons/result.png",
+                label:"Results",
+                href:"/dashboard/list/results",
                 visible:["admin","teacher","student","parent"],
             },
             {
                 icon:"/icons/calendar.png",
                 label:"Events",
-                href:"/list/events",
+                href:"/dashboard/list/events",
                 visible:["admin", "teacher", "student", "parent"],
-            },
-            {
-                icon:"/icons/message.png",
-                label:"Messages",
-                href:"/list/messages",
-                visible: ["admin", "teacher", "student", "parent"],
             },
             {
                 icon:"/icons/announcement.png",
                 label:"Announcement",
-                href:"/list/announcements",
+                href:"/dashboard/list/announcements",
                 visible: ["admin", "teacher", "student", "parent"]
-            },    
+            },
+            {
+                icon:"/icons/Message.png",
+                label:"Reports",
+                href:"/dashboard/list/reports",
+                visible: ["admin", "teacher", "student", "parent"],
+            },
         ],
     },
     {
         title:"OTHER",
         items: [
-            {
-                icon:"/icons/profile.png",
-                label:"Profile",
-                href:"/profile",
-                visible: ["admin","teacher","student","parent"]
-            },
-            {
-                icon:"/icons/setting.png",
-                label:"settings",
-                href:"/settings",
-                visible:["admin","teacher","student","parent"],   
-            },
+            // {
+            //     icon:"/icons/profile.png",
+            //     label:"Profile",
+            //     href:"/profile",
+            //     visible: ["admin","teacher","student","parent"]
+            // },
+            // {
+            //     icon:"/icons/setting.png",
+            //     label:"settings",
+            //     href:"/settings",
+            //     visible:["admin","teacher","student","parent"],   
+            // },
             {
                 icon: "/icons/logout.png",
                 label: "Logout",
@@ -121,16 +134,23 @@ const menuItems =[
 const Menu = () => {
   const { user } = useUser(); 
   const userRole = user?.publicMetadata?.role || "student"; 
-  const [activeItem, setActiveItem] = useState("");
+
+  // 👈 HOME ACTIVE BY DEFAULT
+  const [activeItem, setActiveItem] = useState("Home");
 
   return (
     <div className="mt-1 text-sm">
       {menuItems.map(section => (
         <div className="flex flex-col gap-2" key={section.title}>
-          <span className="hidden lg:block text-yellow-200 font-light my-2">{section.title}</span>
+
+          <span className="hidden lg:block text-yellow-200 font-light my-2">
+            {section.title}
+          </span>
+
           {section.items
             .filter(item => item.visible.includes(userRole))
             .map(item => {
+
               const isActive = activeItem === item.label;
 
               const baseClasses = `flex items-center gap-4 py-1 px-3 w-full transition rounded-xl`;
