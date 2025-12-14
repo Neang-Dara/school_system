@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React, { useState } from 'react';
 import { SignOutButton, useUser } from '@clerk/nextjs';
+import { role } from '../lib/data';
 
 const menuItems = [
     {
@@ -11,26 +12,26 @@ const menuItems = [
             {
                 icon:"/icons/Home.png",
                 label:"Home",
-                href:"/dashboard/admin",
+                href:"/",
                 visible: ["admin", "teacher", "student", "parent"]
             },
             {
                 icon:"/icons/faculty.png",
                 label:"Faculty",
                 href:"/dashboard/list/faculties",
-                visible: ["admin", "teacher", "student", "parent"]
+                visible: ["admin",]
             },
             {
                 icon:"/icons/department.png",
                 label:"Department",
                 href:"/dashboard/list/departments",
-                visible:["admin","teacher"],   
+                visible:["admin",]
             },
             {
                 icon:"/icons/Teacher.png",
                 label:"Teachers",
                 href:"/dashboard/list/teachers",
-                visible:["admin","teacher"],   
+                visible:["admin"],   
             },
             {
                 icon:"/icons/parent.png",
@@ -153,9 +154,9 @@ const Menu = () => {
 
               const isActive = activeItem === item.label;
 
-              const baseClasses = `flex items-center gap-4 py-1 px-3 w-full transition rounded-xl`;
+              const baseClasses = `transition-all duration-200 flex items-center gap-4 py-1 px-3 w-full transition rounded-xl`;
               const activeClasses = "md:bg-gray-100 text-black";
-              const hoverClasses = "text-gray-500 md:hover:bg-gray-100 hover:text-black";
+              const hoverClasses = "text-gray-500 md:hover:bg-gray-100 hover:text-black hover:scale-105";
 
               if (item.label === "Logout") {
                 return (

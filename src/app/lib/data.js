@@ -1,3 +1,7 @@
+export let role = "admin";
+// export let role = "student";
+// export let role = "teacher";
+// export let role = "parent";
 export const teacherData = [
   {
     id: 1,
@@ -877,3 +881,16 @@ export const adminReportsData = [
     priority: "Low"
   }
 ];
+export const calenderEvents = [
+  {
+    title: "Math",
+    start: new Date(2025, 9, 16, 8, 0),
+    end: new Date(2025, 9, 16, 8, 45),
+  },
+  {
+    title: "English",
+    start: new Date(2025, 7, 12, 8, 0),
+    end: new Date(2025, 7, 12, 8, 45),
+  },
+];
+
