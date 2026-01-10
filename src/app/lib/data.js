@@ -1,4 +1,4 @@
-export let role = "admin";
+// export let role = "admin";
 // export let role = "student";
 // export let role = "teacher";
 // export let role = "parent";
@@ -672,7 +672,7 @@ export const attendanceData = [
     department: "ITE",
     faculty: "Engineering",
     session: "Morning",
-    date: "2025-12-01",
+    date: "2026-10-01",
     status: "Present",
     teacher: "Ms. Chan Sreymom",
     remarks: "None"
@@ -884,13 +884,13 @@ export const adminReportsData = [
 export const calenderEvents = [
   {
     title: "Math",
-    start: new Date(2025, 9, 16, 8, 0),
-    end: new Date(2025, 9, 16, 8, 45),
+    start: new Date(2026, 9, 16, 8, 0),
+    end: new Date(2026, 9, 16, 8, 45),
   },
   {
     title: "English",
-    start: new Date(2025, 7, 12, 8, 0),
-    end: new Date(2025, 7, 12, 8, 45),
+    start: new Date(2026, 7, 12, 8, 0),
+    end: new Date(2026, 7, 12, 8, 45),
   },
 ];
 

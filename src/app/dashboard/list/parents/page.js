@@ -82,6 +82,12 @@ const ParentListpage = () => {
 
           <div className='flex items-center gap-4 self-end'>
             <button className='w-8 h-8 flex items-center justify-center rounded-full bg-yellow-200'>
+              <Image src="/icons/import.png" alt="" width={14} height={14}/>
+            </button>
+            <button className='w-8 h-8 flex items-center justify-center rounded-full bg-yellow-200'>
+              <Image src="/icons/export.png" alt="" width={14} height={14}/>
+            </button>
+            <button className='w-8 h-8 flex items-center justify-center rounded-full bg-yellow-200'>
               <Image src="/icons/filter.png" alt="" width={14} height={14}/>
             </button>
 

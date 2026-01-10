@@ -13,6 +13,9 @@ const Navbar = () => {
         {/* Icon and User */}
         <div className="flex item-center gap-6 justify-end w-full">
             <div className="bg-white rounded-full w-7 h-7 flex items-center justify-center cursor-pointer">
+                <Image src="/icons/world.png" alt="" width={20} height={20}/>
+            </div>
+            <div className="bg-white rounded-full w-7 h-7 flex items-center justify-center cursor-pointer">
                 <Image src="/icons/Message.png" alt="" width={20} height={20}/>
             </div>
             <div className="bg-white rounded-full w-7 h-7 flex items-center justify-center cursor-pointer relative">

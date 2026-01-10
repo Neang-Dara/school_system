@@ -7,66 +7,36 @@ import { useState } from "react";
 
 const localizer = momentLocalizer(moment);
 
+// All events shifted to 2026-01-05 (January 5, 2026)
 const events = [
-  // Monday, Dec 14, 2025
-  {
-    title: "Math",
-    start: new Date(2025, 11, 14, 8, 0),
-    end: new Date(2025, 11, 14, 8, 45),
-  },
-  {
-    title: "English",
-    start: new Date(2025, 11, 14, 9, 0),
-    end: new Date(2025, 11, 14, 9, 50),
-  },
+  // Day 5
+  { title: "Math", start: new Date(2026, 0, 5, 8, 0), end: new Date(2026, 0, 5, 8, 45) },
+  { title: "Biology", start: new Date(2026, 0, 5, 10, 0), end: new Date(2026, 0, 5, 10, 45) },
+  { title: "Chemistry", start: new Date(2026, 0, 5, 11, 0), end: new Date(2026, 0, 5, 11, 50) },
+  { title: "History", start: new Date(2026, 0, 5, 12, 0), end: new Date(2026, 0, 5, 12, 45) },
+  { title: "Geography", start: new Date(2026, 0, 5, 13, 0), end: new Date(2026, 0, 5, 13, 45) },
 
-  // Tuesday, Dec 15, 2025
-  {
-    title: "Biology",
-    start: new Date(2025, 11, 15, 8, 0),
-    end: new Date(2025, 11, 15, 8, 45),
-  },
-  {
-    title: "Chemistry",
-    start: new Date(2025, 11, 15, 9, 0),
-    end: new Date(2025, 11, 15, 9, 50),
-  },
+  // Day 6
+  { title: "English", start: new Date(2026, 0, 6, 9, 0), end: new Date(2026, 0, 6, 9, 50) },
+  { title: "Physics", start: new Date(2026, 0, 6, 14, 0), end: new Date(2026, 0, 6, 14, 45) },
+  { title: "Computer Science", start: new Date(2026, 0, 6, 15, 0), end: new Date(2026, 0, 6, 15, 50) },
 
-  // Wednesday, Dec 16, 2025
-  {
-    title: "History",
-    start: new Date(2025, 11, 16, 10, 0),
-    end: new Date(2025, 11, 16, 10, 45),
-  },
-  {
-    title: "Geography",
-    start: new Date(2025, 11, 16, 11, 0),
-    end: new Date(2025, 11, 16, 11, 45),
-  },
+  // Day 7
+  { title: "Physical Education", start: new Date(2026, 0, 7, 8, 0), end: new Date(2026, 0, 7, 8, 45) },
+  { title: "Art", start: new Date(2026, 0, 7, 9, 0), end: new Date(2026, 0, 7, 9, 45) },
+  { title: "Math", start: new Date(2026, 0, 7, 10, 0), end: new Date(2026, 0, 7, 10, 45) },
 
-  // Thursday, Dec 17, 2025
-  {
-    title: "Physics",
-    start: new Date(2025, 11, 17, 8, 0),
-    end: new Date(2025, 11, 17, 8, 45),
-  },
-  {
-    title: "Computer Science",
-    start: new Date(2025, 11, 17, 9, 0),
-    end: new Date(2025, 11, 17, 9, 50),
-  },
+  // Day 8
+  { title: "English", start: new Date(2026, 0, 8, 8, 0), end: new Date(2026, 0, 8, 8, 50) },
+  { title: "Biology", start: new Date(2026, 0, 8, 9, 0), end: new Date(2026, 0, 8, 9, 45) },
+  { title: "Chemistry", start: new Date(2026, 0, 8, 10, 0), end: new Date(2026, 0, 8, 10, 45) },
 
-  // Friday, Dec 18, 2025
-  {
-    title: "Physical Education",
-    start: new Date(2025, 11, 18, 10, 0),
-    end: new Date(2025, 11, 18, 10, 45),
-  },
-  {
-    title: "Art",
-    start: new Date(2025, 11, 18, 11, 0),
-    end: new Date(2025, 11, 18, 11, 45),
-  },
+  // Day 9
+  { title: "History", start: new Date(2026, 0, 9, 8, 0), end: new Date(2026, 0, 9, 8, 45) },
+  { title: "Geography", start: new Date(2026, 0, 9, 9, 0), end: new Date(2026, 0, 9, 9, 45) },
+  { title: "Physics", start: new Date(2026, 0, 9, 10, 0), end: new Date(2026, 0, 9, 10, 45) },
+  { title: "Computer Science", start: new Date(2026, 0, 9, 11, 0), end: new Date(2026, 0, 9, 11, 50) },
+  { title: "Physical Education", start: new Date(2026, 0, 9, 12, 0), end: new Date(2026, 0, 9, 12, 45) },
 ];
 
 
@@ -85,10 +55,15 @@ const BigCalendar = () => {
       endAccessor="end"
       views={[Views.WORK_WEEK, Views.DAY]}
       view={view}
-      style={{ height: "98%"}}
+      style={{ height: "98%" }}
       onView={handleOnChangeView}
-      min={new Date(2025, 11, 14, 8, 0)}
-      max={new Date(2025, 11, 14, 18, 0)}
+
+      // Show correct day
+      defaultDate={new Date(2026, 0, 5)}
+
+      // Set min/max to cover your events
+      min={new Date(2026, 0, 5, 8, 0)}
+      max={new Date(2026, 0, 5, 18, 0)}
     />
   );
 };
