@@ -60,12 +60,8 @@ const ParentListpage = () => {
               <Image src="/icons/view.png" alt="" width={16} height={16}/>
             </button>
           </Link>
-          <button className='w-7 h-7 flex items-center justify-center rounded-full bg-yellow-100'>
-            <Image src="/icons/edit.png" alt="" width={16} height={16}/>
-          </button>
-          <button className='w-7 h-7 flex items-center justify-center rounded-full bg-red-400'>
-            <Image src="/icons/delete.png" alt="" width={16} height={16}/>
-          </button>
+          <FormModal table="parent" type="update" data={item}/>
+          <FormModal table="parent" type="delete" id={item.id}/>
         </div>
       </td>
     </tr>

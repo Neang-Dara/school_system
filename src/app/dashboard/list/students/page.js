@@ -1,3 +1,4 @@
+import FormModal from '@/app/components/FormModal'
 import Pagination from '@/app/components/Pagination'
 import Table from '@/app/components/Table'
 import TableSearch from '@/app/components/TableSearch'
@@ -66,7 +67,7 @@ const StudentListpage = () => {
 
       <td>
         <div className='flex items-center gap-2'>
-          <Link href={`/dashboard/list/teachers/${item.id}`}>
+          <Link href={`/dashboard/list/students/${item.id}`}>
             <button className='w-7 h-7 flex items-center justify-center rounded-full bg-gray-300'>
               <Image src="/icons/view.png" alt="" width={16} height={16}/>
             </button>
@@ -74,9 +75,10 @@ const StudentListpage = () => {
           <button className='w-7 h-7 flex items-center justify-center rounded-full bg-yellow-100'>
             <Image src="/icons/edit.png" alt="" width={16} height={16}/>
           </button>
-          <button className='w-7 h-7 flex items-center justify-center rounded-full bg-red-400'>
+          {/* <button className='w-7 h-7 flex items-center justify-center rounded-full bg-red-400'>
             <Image src="/icons/delete.png" alt="" width={16} height={16}/>
-          </button>
+          </button> */}
+          <FormModal table="teacher" type="delete" id={item.id}/>
         </div>
       </td>
     </tr>
@@ -106,9 +108,10 @@ const StudentListpage = () => {
               <Image src="/icons/sort.png" alt="" width={14} height={14}/>
             </button>
 
-            <button className='w-8 h-8 flex items-center justify-center rounded-full bg-yellow-200'>
+            {/* <button className='w-8 h-8 flex items-center justify-center rounded-full bg-yellow-200'>
               <Image src="/icons/plus.png" alt="" width={14} height={14}/>
-            </button>            
+            </button>             */}
+            <FormModal table="student" type="create"/>
           </div>
         </div>
       </div>

@@ -27,7 +27,7 @@ const PerformanceChart = () => {
               startAngle={180}
               endAngle={0}
               cx="50%"
-              cy="100%"
+              cy="75%"
               innerRadius={65}
               outerRadius={135}
               isAnimationActive={true}
@@ -35,10 +35,13 @@ const PerformanceChart = () => {
           </PieChart>
         </ResponsiveContainer>
 
-        {/* Under inner radius */}
-        <div className="absolute top-[80%] left-1/2 -translate-x-1/2 text-center pointer-events-none">
+        {/* Center text */}
+        <div className="absolute top-[50%] left-1/2 -translate-x-1/2 text-center pointer-events-none">
           <h1 className="text-xl font-bold">9.2</h1>
           <p className="text-[10px] text-gray-400">of 10 max LTS</p>
+          <h2 className="font-medium text-m mt-8">
+            1st Semester - 2nd Semester
+          </h2>
         </div>
 
       </div>
