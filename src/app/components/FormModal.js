@@ -46,25 +46,7 @@ const FormModal = ({ table, type, data, id }) => {
       );
     } else if (type === "edit" && id) {
       return (
-        <div className="p-4 flex flex-col gap-4">
-          <h2 className="text-center font-semibold text-lg">Edit {table}</h2>
-          <input
-            type="text"
-            placeholder={`Update ${table} name`}
-            className="border p-2 rounded-md w-full"
-            defaultValue={data?.name || ""}
-          />
-          <div className="flex justify-end gap-2">
-            <button
-              type="button"
-              className="px-4 py-2 rounded-md bg-gray-200"
-              onClick={() => setOpen(false)}
-            >
-              Cancel
-            </button>
-            <button className="px-4 py-2 rounded-md bg-sky-400 text-white">Update</button>
-          </div>
-        </div>
+        <TeacherForm type="plus"/>
       );
     } else {
       return null;
