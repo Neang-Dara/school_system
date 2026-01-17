@@ -107,5 +107,4 @@ const ParentListpage = () => {
     </div>
   )
 }
-
 export default ParentListpage
