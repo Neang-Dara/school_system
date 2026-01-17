@@ -36,7 +36,6 @@ const EventListpage = () => {
       <td className='hidden md:table-cell gap-4 p-4 font-bold'>{item.title}</td>
       <td className='hidden md:table-cell'>{item.class}</td>
       <td className='hidden md:table-cell'>{item.date}</td>
-
       <td>
         <div className='flex items-center gap-2'>
           <Link href={`/dashboard/list/teachers/${item.id}`}>

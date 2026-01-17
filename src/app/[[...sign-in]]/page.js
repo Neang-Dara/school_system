@@ -10,7 +10,6 @@ import { useEffect } from 'react'
 const SignInPage = () => {
   const { isSignedIn, user, isLoaded } = useUser()
   const router = useRouter()
-
   useEffect(() => {
     if (!isLoaded || !isSignedIn || !user) return
 
