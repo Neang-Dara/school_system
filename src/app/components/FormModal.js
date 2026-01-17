@@ -44,9 +44,9 @@ const FormModal = ({ table, type, data, id }) => {
       return (
         <TeacherForm type="plus"/>
       );
-    } else if (type === "edit" && id) {
+    } else if (type === "edit") {
       return (
-        <TeacherForm type="plus"/>
+        <TeacherForm type="edit" data={data}/>
       );
     } else {
       return null;

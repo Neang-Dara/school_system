@@ -84,7 +84,19 @@ const TeacherListpage = () => {
               <Image src="/icons/view.png" alt="" width={16} height={16}/>
             </button>
           </Link>
-          <FormModal table="teacher" type="edit" data={item}/>
+          <FormModal table="teacher" type="edit" data={{
+            id: 1,
+            username: "Neang Dara",
+            email: "neangdara@gmail.com",
+            password: "password",
+            firstName: "Neang",
+            lastName: "Dara",
+            phone: "012345678",
+            address: "Phnom Penh",
+            bloodType: "A+",
+            dateOfBirth: "2000-01-02",
+            sex:"male",
+          }}/>
           {/* <button className='w-7 h-7 flex items-center justify-center rounded-full bg-red-400'>
             <Image src="/icons/delete.png" alt="" width={16} height={16}/>
           </button> */}

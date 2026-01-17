@@ -1,3 +1,4 @@
+import FormModal from '@/app/components/FormModal'
 import Pagination from '@/app/components/Pagination'
 import Table from '@/app/components/Table'
 import TableSearch from '@/app/components/TableSearch'
@@ -60,7 +61,7 @@ const ParentListpage = () => {
               <Image src="/icons/view.png" alt="" width={16} height={16}/>
             </button>
           </Link>
-          <FormModal table="parent" type="update" data={item}/>
+          <FormModal table="parent" type="edit" data={item}/>
           <FormModal table="parent" type="delete" id={item.id}/>
         </div>
       </td>
