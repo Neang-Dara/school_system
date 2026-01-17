@@ -9,17 +9,17 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@clerk/elements": "^0.23.87",
-    "@clerk/nextjs": "^6.35.6",
+    "@clerk/elements": "^0.24.4",
+    "@clerk/nextjs": "^6.36.8",
     "@hookform/resolvers": "^5.2.2",
     "eslint": "9.39.1",
     "eslint-config-next": "16.0.5",
     "moment": "^2.30.1",
     "next": "16.0.5",
-    "react": "19.2.0",
+    "react": "^18.2.0",
     "react-big-calendar": "^1.19.4",
     "react-calendar": "^6.0.0",
-    "react-dom": "19.2.0",
+    "react-dom": "^18.2.0",
     "react-hook-form": "^7.71.0",
     "recharts": "^3.5.1",
     "zod": "^4.3.5"
